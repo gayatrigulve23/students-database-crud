@@ -1,0 +1,52 @@
+@baseUrl = http://127.0.0.1:8000
+
+### API home
+GET {{baseUrl}}/
+
+### Create a student (dummy data only)
+POST {{baseUrl}}/students
+Content-Type: application/json
+
+{
+  "name": "Aarav Patil",
+  "date_of_birth": "2005-04-12",
+  "email": "aarav.demo@example.com",
+  "phone": "9876543210",
+  "course": "Computer Engineering",
+  "address": "Pune, Maharashtra",
+  "enrollment_date": "2025-08-01"
+}
+
+### List students
+GET {{baseUrl}}/students
+
+### Filter students by name
+GET {{baseUrl}}/students?name=Aarav
+
+### Get student by ID (change 1 to the returned ID)
+GET {{baseUrl}}/students/1
+
+### Partially update a student
+PATCH {{baseUrl}}/students/1
+Content-Type: application/json
+
+{
+  "course": "Information Technology"
+}
+
+### Replace student details (send all required fields)
+PUT {{baseUrl}}/students/1
+Content-Type: application/json
+
+{
+  "name": "Aarav Patil",
+  "date_of_birth": "2005-04-12",
+  "email": "aarav.demo@example.com",
+  "phone": "9876543210",
+  "course": "Information Technology",
+  "address": "Pune, Maharashtra",
+  "enrollment_date": "2025-08-01"
+}
+
+### Delete student
+DELETE {{baseUrl}}/students/1
